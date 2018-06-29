@@ -1,4 +1,6 @@
 # R script for "Getting and Cleaning Data Course" Week 4 Project
+#load dplyr package
+library(dplyr)
 
 #Read the test and train data sets into R
 
@@ -41,5 +43,10 @@ names(x_subject_activity) <- c("subject", "activity", variabl_names)
 
 #Group by the subject and activity, then summarize with mean for all varibles
 x_mean_subject_activity <- x_subject_activity %>% group_by(subject, activity) %>% summarize_all(mean)
+
+#Write out the final tidy data set
+write.table(x_mean_subject_activity, "x_tidy.txt")
+
+
 
 
