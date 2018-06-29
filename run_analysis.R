@@ -45,7 +45,7 @@ names(x_subject_activity) <- c("subject", "activity", variabl_names)
 x_mean_subject_activity <- x_subject_activity %>% group_by(subject, activity) %>% summarize_all(mean)
 
 #Write out the final tidy data set
-write.table(x_mean_subject_activity, "x_tidy.txt")
+write.table(x_mean_subject_activity, "x_tidy.txt", row.name = FALSE)
 
 
 
