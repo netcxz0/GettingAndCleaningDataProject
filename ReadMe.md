@@ -8,4 +8,6 @@ This program perform the following functions:
 3. Group the data set by subject then activities.
 4. Calculate the average values for each variable for each subject and activity.
 
-## This script assigns the original data column name from the features.txt file, uses the regular expression to select the columns that have mean() and std() in the names.
+This script assigns the original data column name from the features.txt file, uses the regular expression to select the columns that have mean() and std() in the names.
+It also uses the sapply function and activity index and label list to convert the activity index in the data set to the activity label.
+Last, it uses the pipe %>% functions to group the data set by subject and activity, then summarize and mean functions to get the average for each group. 
