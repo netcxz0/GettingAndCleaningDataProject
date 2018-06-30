@@ -32,20 +32,20 @@ activities <- read.table("activity_labels.txt", col.names = c("index", "activiti
 #Convert the activity index to the descriptive labels
 y_label <- sapply(y_merge, function(x) activities$activities[match(x, activities$index)])
 
-#bind the x data set with the subject and activity label
-x_subject_activity <- cbind(subject_merge, y_label, x_mean_std)
+#bind the x data set with the activity and subject label
+x_activity_subject <- cbind(y_label, subject_merge, x_mean_std)
 
 #Create the variable names
 variabl_names <- gsub("[()]","",features$features[mean_std_index])
 
 #Assign variable names to the data set
-names(x_subject_activity) <- c("subject", "activity", variabl_names)
+names(x_activity_subject) <- c("activity","subject",variabl_names)
 
 #Group by the subject and activity, then summarize with mean for all varibles
-x_mean_subject_activity <- x_subject_activity %>% group_by(subject, activity) %>% summarize_all(mean)
+x_mean_activity_subject <- x_activity_subject %>% group_by(activity, subject) %>% summarize_all(mean)
 
 #Write out the final tidy data set
-write.table(x_mean_subject_activity, "x_tidy.txt", row.name = FALSE)
+write.table(x_mean_activity_subject, "x_tidy.txt", row.names = FALSE)
 
 
 
