@@ -2,6 +2,8 @@
 
 ### R script progrm for the "Getting and Cleaning Data" course project.
 
+### Data set:  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 This program perform the following functions:
 1. Merges the training and the test data set to create one data set.
 2. Extracts only the measuremetns on the mean and standard deviation from the merged data set.
