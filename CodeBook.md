@@ -24,6 +24,6 @@
 4. Matches the extracted x data set rows with the subject list from the merged subject_test.txt and subject_train.txt files, 
    and the merged activity list from y_test.txt and y_train.txt files.
 5. Convert the acitivity code to the descriptive activity labels based on the activity_label.txt file.
-6. Group the above data set by the subject and activity, then calculate the average values on each variables for each group to generate the tidy data set.
+6. Group the above data set by the activity and subject, then calculate the average values on each variables for each group to generate the tidy data set.
 
 
